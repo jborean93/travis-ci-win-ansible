@@ -3,6 +3,11 @@ os: windows
 language: shell
 
 script:
-- whoami
-- powershell.exe -Command $PSVerionTable
+- curl -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+- |
+  powershell.exe -NoProfile -Command {
+      Rename-Item Ubuntu.appx Ubuntu.zip
+      Expand-Archive Ubuntu.zip Ubuntu
+      gci Ubuntu
+  }
 - wsl.exe ls -a
