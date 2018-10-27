@@ -4,5 +4,5 @@ language: shell
 
 script:
 - whoami
-- powershell.exe $PSVerionTable
+- powershell.exe -Command $PSVerionTable
 - wsl.exe ls -a
