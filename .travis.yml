@@ -3,7 +3,9 @@ os: windows
 language: shell
 
 script:
-- curl -L -o ubuntu-1604.zip https://aka.ms/wsl-ubuntu-1604
-- powershell.exe -NoProfile -Command "Expand-Archive -Path ubuntu-1604.zip -DestinationPath Ubuntu"
-- Ubuntu/ubuntu.exe install --root
-- wsl.exe ls -a
+- curl -L -o ubuntu-1804.zip https://aka.ms/wsl-ubuntu-1804
+- powershell.exe -NoProfile -Command "Expand-Archive -Path ubuntu-1804.zip -DestinationPath Ubuntu"
+- Ubuntu/ubuntu1804.exe install --root
+# check to see if python3 get-pip.py is faster
+- wsl.exe apt install -y python3-pip
+- wsl.exe pip3 install -y ansible pywinrm
