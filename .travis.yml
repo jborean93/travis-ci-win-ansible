@@ -5,5 +5,5 @@ language: shell
 script:
 - curl -L -o ubuntu-1604.zip https://aka.ms/wsl-ubuntu-1604
 - powershell.exe -NoProfile -Command "Expand-Archive -Path ubuntu-1604.zip -DestinationPath Ubuntu"
-- Ubuntu/ubuntu.exe --help
+- printf "ansible\nansible\nansible\n" | Ubuntu/ubuntu.exe
 - wsl.exe ls -a
