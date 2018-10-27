@@ -3,7 +3,9 @@ os: windows
 language: shell
 
 script:
+- wslconfig /list /all
 - curl -L -o ubuntu-1604.zip https://aka.ms/wsl-ubuntu-1604
 - powershell.exe -NoProfile -Command "Expand-Archive -Path ubuntu-1604.zip -DestinationPath Ubuntu"
-- (echo "ansible"; echo "ansible"; echo "ansible") | Ubuntu/ubuntu.exe
+- Ubuntu/ubuntu.exe /?
+#- (echo "ansible"; echo "ansible"; echo "ansible") | Ubuntu/ubuntu.exe
 - wsl.exe ls -a
