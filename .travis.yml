@@ -1,4 +1,6 @@
 os: windows
 
+language: shell
+
 script:
 - whoami
